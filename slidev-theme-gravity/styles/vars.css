@@ -1,0 +1,20 @@
+.g-root {
+    --slidev-code-background: var(--g-color-base-background);
+    --slidev-code-foreground: var(--g-color-base-background);
+    --slidev-code-font-family: var(--g-font-family-sans);
+    --slidev-code-padding: var(--g-spacing-4);
+    --slidev-code-font-size: var(--g-spacing-3);
+    --slidev-code-line-height: var(--g-spacing-5);
+    --slidev-code-radius: var(--g-spacing-1);
+    --slidev-code-margin: var(--g-spacing-1) 0;
+    --slidev-theme-primary: var(--g-color-text-primary);
+
+    --slidev-transition-duration: 0.5s;
+    --slidev-slide-container-background: var(--g-color-base-background);
+    --slidev-controls-foreground: var(--g-color-text-primary);
+}
+
+html.dark {
+    /*--slidev-code-background: var(--g-color-base-background);*/
+    /*--slidev-code-foreground: var(--g-color-text-primary);*/
+}

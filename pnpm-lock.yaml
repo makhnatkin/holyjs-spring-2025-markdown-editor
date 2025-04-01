@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@iconify-json/gravity-ui':
+        specifier: ^1.2.5
+        version: 1.2.5
       '@slidev/cli':
         specifier: ^51.4.0
         version: 51.4.0(@babel/parser@7.26.10)(@nuxt/kit@3.16.0)(@types/markdown-it@14.1.2)(@types/node@18.19.80)(@vue/compiler-sfc@3.5.13)(markdown-it-async@2.2.0)(postcss@8.5.3)(tsx@4.19.3)
@@ -494,6 +497,9 @@ packages:
 
   '@iconify-json/carbon@1.2.8':
     resolution: {integrity: sha512-6xh4YiFBz6qoSnB3XMe23WvjTJroDFXB17J1MbiT7nATFe+70+em1acRXr8hgP/gYpwFMHFc4IvjA/IPTPnTzg==}
+
+  '@iconify-json/gravity-ui@1.2.5':
+    resolution: {integrity: sha512-7uf4xG2ijmcte4AqPpzNTqnEBqxvHBKW/gI0VTZeP0nLtZSvoCybNt5QsJ7f/xyrIQDgCJ4usEmRaX7G86NueA==}
 
   '@iconify-json/logos@1.2.4':
     resolution: {integrity: sha512-XC4If5D/hbaZvUkTV8iaZuGlQCyG6CNOlaAaJaGa13V5QMYwYjgtKk3vPP8wz3wtTVNVEVk3LRx1fOJz+YnSMw==}
@@ -3627,6 +3633,10 @@ snapshots:
   '@floating-ui/utils@0.2.9': {}
 
   '@iconify-json/carbon@1.2.8':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/gravity-ui@1.2.5':
     dependencies:
       '@iconify/types': 2.0.0
 

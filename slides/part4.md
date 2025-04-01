@@ -48,13 +48,27 @@ subtitle: Вызовы
 это похоже на Redux, много сущностей
 * мы сделали что-то типа slice в Redux Toolkit
 * но вызов дальше – сделать расширение для обоих режимов
-    * создаем расширенный маркдаун YFM плагины
-    * создаем рантайм, превью – публикуем в Diplodoc
-    * пишем разные штуки для ProseMirror
+* создаем расширенный маркдаун YFM плагины
+* создаем рантайм, превью – публикуем в Diplodoc
+* пишем разные штуки для ProseMirror
   
 <!--
 ##########################################################################################################################################
 -->
+
+---
+layout: two-cols
+subtitle: Вызовы
+---
+
+# У ProseMirror есть плагины
+
+Plugins are used to extend the behavior of the editor and editor state in various ways. Some are relatively simple, like the keymap plugin that binds actions to keyboard input. Others are more involved, like the history plugin which implements an undo history by observing transactions and storing their inverse in case the user wants to undo them.
+
+<!--
+##########################################################################################################################################
+-->
+
 
 ---
 layout: center

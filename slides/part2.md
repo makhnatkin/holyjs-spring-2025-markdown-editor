@@ -45,7 +45,7 @@ subtitle: История
 
 ---
 layout: default
-subtitle: Знакомство
+subtitle: История
 codeSize: 1.2rem
 ---
 
@@ -410,7 +410,7 @@ subtitle: История
 ---
 layout: default
 image: /part2/markup-mode.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="false" />
@@ -422,7 +422,7 @@ image: /part2/markup-mode.png
 ---
 layout: default
 image: /part2/split-mode.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="false" />
@@ -446,7 +446,7 @@ subtitle: История
 ---
 layout: default
 image: /part2/extensions.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -459,7 +459,7 @@ image: /part2/extensions.png
 ---
 layout: default
 image: /part2/extension-mermaid.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -472,7 +472,7 @@ image: /part2/extension-mermaid.png
 ---
 layout: default
 image: /part2/extension-draw.io.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -484,7 +484,7 @@ image: /part2/extension-draw.io.png
 ---
 layout: default
 image: /part2/extension-gpt.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -496,7 +496,7 @@ image: /part2/extension-gpt.png
 ---
 layout: default
 image: /part2/extension-includes.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -510,7 +510,7 @@ image: /part2/extension-includes.png
 ---
 layout: default
 image: /part2/extension-structure.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -523,7 +523,7 @@ image: /part2/extension-structure.png
 ---
 layout: default
 image: /part2/extension-section.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -547,7 +547,7 @@ subtitle: История
 ---
 layout: default
 image: /part2/preset-zero.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -559,7 +559,7 @@ image: /part2/preset-zero.png
 ---
 layout: default
 image: /part2/preset-commonmark.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -571,7 +571,7 @@ image: /part2/preset-commonmark.png
 ---
 layout: default
 image: /part2/preset-yfm.png
-
+subtitle: История
 ---
 
 <Mode :wysiwyg="true" />
@@ -618,7 +618,7 @@ subtitle: История
 ---
 layout: default
 image: /part2/markdown-editor.png
-
+subtitle: История
 ---
 
 <!--

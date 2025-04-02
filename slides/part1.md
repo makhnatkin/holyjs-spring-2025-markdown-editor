@@ -333,7 +333,7 @@ right: true
 ---
 layout: default
 subtitle: Знакомство
-codeSize: 1.4rem
+codeSize: 1.2rem
 ---
 
 ::section::
@@ -342,6 +342,7 @@ yc resource-manager cloud create \
   --name _имя_облака_ \
   --billing-account-id _идентификатор_платежного_аккаунта_
 ```
+
 <!--
 ##########################################################################################################################################
 -->
@@ -361,7 +362,7 @@ layout: default
 subtitle: Знакомство
 ---
 
-<Mode :wysiwyg="true" :offset="['', '60%']" :size="'6.5rem'" />
+<Mode :wysiwyg="true" :offset="['', '60%']" :size="'6.25rem'" />
 
 <Mode :wysiwyg="false" :offset="['', '27%']" :size="'9rem'" />
 

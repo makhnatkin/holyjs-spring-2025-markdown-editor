@@ -6,295 +6,446 @@ layout: intro
 # Вызовы
 
 <!--
-##########################################################################################################################################
+(end) ####################################
 -->
+
+---
+layout: center
+subtitle: Вызовы
+---
+
+# Парсинг и сериализация
+
+<!--
+(end) ####################################
+-->
+
 
 ---
 layout: default
-image: /part4/draw.png
+image: /part4/parsing-serialization.png
 subtitle: Вызовы
 ---
 
 <!--
-##########################################################################################################################################
--->
-
----
-layout: default
-image: /part4/html.png
-subtitle: Вызовы
----
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: default
-image: /part4/sections.png
-subtitle: Вызовы
----
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: two-cols
-subtitle: Вызовы
----
-
-# У ProseMirror нет расширений
-это похоже на Redux, много сущностей
-* мы сделали что-то типа slice в Redux Toolkit
-* но вызов дальше – сделать расширение для обоих режимов
-* создаем расширенный маркдаун YFM плагины
-* создаем рантайм, превью – публикуем в Diplodoc
-* пишем разные штуки для ProseMirror
-  
-<!--
-##########################################################################################################################################
--->
-
----
-layout: two-cols
-subtitle: Вызовы
----
-
-# У ProseMirror есть плагины
-
-Plugins are used to extend the behavior of the editor and editor state in various ways. Some are relatively simple, like the keymap plugin that binds actions to keyboard input. Others are more involved, like the history plugin which implements an undo history by observing transactions and storing their inverse in case the user wants to undo them.
-
-<!--
-##########################################################################################################################################
+(end) ####################################
 -->
 
 
 ---
 layout: center
----
-
-# Тут пример с Redux toolkit
-
-<!--
-##########################################################################################################################################
--->
-
-
----
-layout: center
----
-
-# Тут пример с Redux
-
-<!--
-##########################################################################################################################################
--->
-
-
----
-layout: default
-image: /part4/manager.png
-subtitle: Вызовы
----
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: two-cols
-subtitle: Вызовы
----
-
-# Сериализация и парсинг
-
-нужно реализовать цепочку
-* **Node ProseMirror -> строка в формате YFM -> html**
-* строка в формате **YFM -> дерево токенов Markdown It -> Node ProseMirror**
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: default
-image: /part4/parser.png
-subtitle: Вызовы
----
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: default
-image: /part4/serializer.png
-subtitle: Вызовы
----
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: center
----
-
-# Сложности
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: two-cols
 subtitle: Вызовы
 ---
 
 # Экранирование
 
-вставили в режиме одном или другом
-
 <!--
-##########################################################################################################################################
--->
-
----
-layout: default
-image: /part4/real-wysiwyg.jpg
----
-
-::title::
-subtitle: Вызовы
-&nbsp;
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: two-cols
----
-
-subtitle: Вызовы
-&nbsp;
-
-# Проблема с пустыми строками в списках
-
-* философский вопрос – что первично?
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: default
-image: /part4/list-css.png
----
-
-::title::
-subtitle: Вызовы
-&nbsp;
-
-<!--
-##########################################################################################################################################
--->
-
----
-layout: two-cols
----
-
-subtitle: Вызовы
-&nbsp;
-
-# Проблема с пустыми строками в списках
-
-* философский вопрос – что первично?
-* решили с помощью css
-
-<!--
-##########################################################################################################################################
+(end) ####################################
 -->
 
 
 ---
 layout: default
-image: /part4/css.png
+subtitle: Вызовы
+codeSize: 3rem
 ---
 
-::title::
-subtitle: Вызовы
-&nbsp;
+```{all}
+~ * _ # ^ `
+```
 
 <!--
-##########################################################################################################################################
--->
-
----
-layout: two-cols
----
-
-subtitle: Вызовы
-&nbsp;
-
-# Раскукоживание таблиц
-
-* вставили в режиме одном или другом
-
-<!--
-##########################################################################################################################################
+(end) ####################################
 -->
 
 ---
 layout: default
-image: /part4/solution.png
+image: /part4/escaping-wysiwyg.png
+subtitle: Вызовы
 ---
 
-::title::
-subtitle: Вызовы
-&nbsp;
+<Mode :wysiwyg="true" />
 
 <!--
-##########################################################################################################################################
+(end) ####################################
 -->
 
 ---
-layout: two-cols
+layout: default
+image: /part4/escaping-markup.png
+subtitle: Вызовы
 ---
 
-subtitle: Вызовы
-&nbsp;
-
-# Что считать информацией?
-
-Информация это не только что в таблице, но и пробелы и перенос строки
+<Mode :wysiwyg="false" />
 
 <!--
-##########################################################################################################################################
+(end) ####################################
 -->
 
----
-layout: two-cols
----
 
+---
+layout: default
 subtitle: Вызовы
-&nbsp;
+codeSize: 0.9rem
+---
 
-# Хорошее решение
+```ts{all|10|all}
+// Escape the given string so that it can safely appear in Markdown
+// content. If `startOfLine` is true, also escape characters that
+// have special meaning only at the start of the line.
+esc(str: string, startOfLine = false) {
+    const escRegexp = this.options?.commonEscape || /[`\^+*\\\|~\[\]\{\}<>\$_]/g;
+    const startOfLineEscRegexp = this.options?.startOfLineEscape || /^[:#\-*+>]/;
 
-половина – учитывать переносы строк
+    str = str.replace(escRegexp, '\\$&');
+    if (startOfLine) {
+      str = str.replace(startOfLineEscRegexp, '\\$&').replace(/^(\s*\d+)\./, '$1\\.');
+    }
+    return str;
+}
+```
 
 <!--
-##########################################################################################################################################
+(end) ####################################
 -->
 
 ---
 layout: center
+subtitle: Вызовы
 ---
 
-# Выводы
+# Случай со списками
 
 <!--
-##########################################################################################################################################
+(end) ####################################
+-->
+
+
+---
+layout: default
+image: /part4/list-p.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/list-wysiwyg.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="true" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: center
+subtitle: Вызовы
+---
+
+# Где источник истины?
+
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/matrix-pills.jpg
+subtitle: Вызовы
+copyright: "фото – «Матрица», 1999"
+---
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/matrix-pills-bw.jpg
+subtitle: Вызовы
+copyright: "фото – «Матрица», 1999"
+---
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/list-pr.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/list-li.png
+subtitle: Вызовы
+---
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: center
+subtitle: Вызовы
+---
+
+
+# Модификация разметки
+
+<!--
+(end) ####################################
+-->
+
+
+---
+layout: default
+subtitle: Вызовы
+codeSize: 1.1rem
+---
+
+```md{all}
+### Simple table
+
+#|
+|| **Header1** ||
+|| Text        ||
+|#
+```
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/table-wysiwyg.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="true" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/parsing-serialization-table.png
+subtitle: Вызовы
+---
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+subtitle: Вызовы
+codeSize: 0.9rem
+---
+
+```ts{all|8-9,12|all}
+// src/extensions/yfm/YfmTable/YfmTableSpecs
+
+builder.addNode(YfmTableNode.Row, () => ({
+    // spec: ...,
+    // fromMd: {tokenSpec: ...},
+    toMd: (state, node) => {
+        state.write('||');
+        state.ensureNewLine();
+        state.write('\n');
+        state.renderContent(node);
+        state.write('||');
+        state.ensureNewLine();
+    },
+}))
+```
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+subtitle: Вызовы
+codeSize: 1rem
+---
+
+```md{all}
+### Simple table
+
+#|
+||
+
+**Header1**
+
+||
+||
+
+Text
+
+||
+|#
+```
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/parsing-serialization-dyn.png
+subtitle: Вызовы
+---
+
+<!--
+(end) ####################################
+-->
+
+
+---
+layout: default
+subtitle: Вызовы
+codeSize: 0.9rem
+---
+
+```ts{all|9|10|12|13|all}
+/**
+ * - Assigns a unique `data-token-id` to each token.
+ * - Captures and stores the raw Markdown using `MarkupManager`.
+ */
+process: (token, _, rawMarkup) => {
+    const {map} = token;
+
+    if (map) {
+        const content = rawMarkup.split('\n').slice(map[0], map[1]).join('\n');
+        const tokenId = v5(content, markupManager.getNamespace());
+
+        token.attrSet(YFM_TABLE_TOKEN_ATTR, tokenId);
+        markupManager.setMarkup(tokenId, content);
+    }
+    return token;
+},
+```
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+subtitle: Вызовы
+codeSize: 0.9rem
+---
+
+```ts{all|6|all}
+/**
+ * - Links the token to its corresponding node via `data-node-id`.
+ */
+process: (token, attrs) => ({
+    ...attrs,
+    [YFM_TABLE_NODE_ATTR]: token.attrGet(YFM_TABLE_TOKEN_ATTR),
+}),
+```
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+subtitle: Вызовы
+codeSize: 0.9rem
+---
+
+```ts{all|11|12|all}
+/**
+ * - Retrieves the original Markdown using the `data-node-id` attribute.
+ * - Uses the original Markdown if the node matches the saved version.
+ * - Falls back to schema-based rendering if the node structure, attributes,
+ *   or parent elements affect it.
+ */
+process: (state, node, parent, index, callback) => {
+    const nodeId = node.attrs[YFM_TABLE_NODE_ATTR];
+    const savedNode = markupManager.getNode(nodeId);
+
+    if (!PARENTS_WITH_AFFECT.includes(parent?.type?.name) && savedNode?.eq(node)) {
+        state.write(markupManager.getMarkup(nodeId) + '\n');
+        return;
+    }
+    callback?.(state, node, parent, index);
+},
+```
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: center
+subtitle: Вызовы
+---
+
+# Что является контентом?
+
+<!--
+(end) ####################################
+-->
+
+
+---
+layout: default
+image: /part4/content-text.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/content-break.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
+-->
+
+---
+layout: default
+image: /part4/content-space.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
 -->

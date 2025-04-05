@@ -81,14 +81,24 @@ dir: ltr
 lang: ru
 ---
 
-# MarkdownEditor: следующий шаг в работе с текстом
+<div class="relative -top-[70px]">
+<h1 style="font-size: 2.85rem; line-height: 1.3;">MarkdownEditor: следующий шаг в работе с текстом</h1>
+</div>
 
 ::footer::
-### Сергей Махнаткин
 
+<div style="font-size: 1.2rem;">
+Сергей Махнаткин<br/>
 разработчик интерфейсов
+</div>
+
 ::tags::
-Yandex / Gravity UI
+
+<div class="flex items-bottom gap-[0.6rem]">
+    <img src="./public/part1/yandex-logo.png" class="w-[80px] align-baseline object-contain" />
+    <span class="text-[0.9rem]">•</span>
+    <img src="./public/part1/gravity-logo.png" class="w-[110px] self-end object-contain relative top-[2px]" />
+</div>
 
 <!--
 3. добавить футер
@@ -114,3 +124,11 @@ src: ./slides/part4.md
 ---
 src: ./slides/part5.md
 ---
+
+
+</file>
+</file>
+</file>
+</file>
+</file>
+</file>

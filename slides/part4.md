@@ -14,106 +14,6 @@ layout: center
 subtitle: Вызовы
 ---
 
-# Парсинг и сериализация
-
-<!--
-(end) ####################################
--->
-
-
----
-layout: default
-image: /part4/parsing-serialization.png
-subtitle: Вызовы
----
-
-<!--
-(end) ####################################
--->
-
-
----
-layout: center
-subtitle: Вызовы
----
-
-# Экранирование
-
-<!--
-(end) ####################################
--->
-
-
----
-layout: default
-subtitle: Вызовы
-codeSize: 3rem
----
-
-```{all}
-~ * _ # ^ `
-```
-
-<!--
-(end) ####################################
--->
-
----
-layout: default
-image: /part4/escaping-wysiwyg.png
-subtitle: Вызовы
----
-
-<Mode :wysiwyg="true" />
-
-<!--
-(end) ####################################
--->
-
----
-layout: default
-image: /part4/escaping-markup.png
-subtitle: Вызовы
----
-
-<Mode :wysiwyg="false" />
-
-<!--
-(end) ####################################
--->
-
-
----
-layout: default
-subtitle: Вызовы
-codeSize: 0.9rem
----
-
-```ts{all|10|all}
-// Escape the given string so that it can safely appear in Markdown
-// content. If `startOfLine` is true, also escape characters that
-// have special meaning only at the start of the line.
-esc(str: string, startOfLine = false) {
-    const escRegexp = this.options?.commonEscape || /[`\^+*\\\|~\[\]\{\}<>\$_]/g;
-    const startOfLineEscRegexp = this.options?.startOfLineEscape || /^[:#\-*+>]/;
-
-    str = str.replace(escRegexp, '\\$&');
-    if (startOfLine) {
-      str = str.replace(startOfLineEscRegexp, '\\$&').replace(/^(\s*\d+)\./, '$1\\.');
-    }
-    return str;
-}
-```
-
-<!--
-(end) ####################################
--->
-
----
-layout: center
-subtitle: Вызовы
----
-
 # Случай со списками
 
 <!--
@@ -263,7 +163,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|8-9,12|all}
+```ts{all|8-9,12}
 // src/extensions/yfm/YfmTable/YfmTableSpecs
 
 builder.addNode(YfmTableNode.Row, () => ({
@@ -330,7 +230,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|9|10|12|13|all}
+```ts{all|9|10|12|13}
 /**
  * - Assigns a unique `data-token-id` to each token.
  * - Captures and stores the raw Markdown using `MarkupManager`.
@@ -359,7 +259,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|6|all}
+```ts{all|6}
 /**
  * - Links the token to its corresponding node via `data-node-id`.
  */
@@ -379,7 +279,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|11|12|all}
+```ts{all|11|12}
 /**
  * - Retrieves the original Markdown using the `data-node-id` attribute.
  * - Uses the original Markdown if the node matches the saved version.
@@ -441,6 +341,19 @@ subtitle: Вызовы
 ---
 layout: default
 image: /part4/content-space.png
+subtitle: Вызовы
+---
+
+<Mode :wysiwyg="false" />
+
+<!--
+(end) ####################################
+-->
+
+
+---
+layout: default
+image: /part4/content-break.png
 subtitle: Вызовы
 ---
 

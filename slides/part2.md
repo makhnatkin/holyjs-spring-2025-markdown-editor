@@ -43,14 +43,13 @@ WackoWiki (open-source проект) был создан на основании
 -->
 
 ---
-layout: two-cols
+layout: default
+image: /part2/wiki-old.jpg
 subtitle: История
+right: true
 ---
 
-# Разметка Wiki
-
-* Yandex Wiki был создан на основании<br />open-source проекта WackoWiki;
-* появилась первая Wiki-разметка.
+WackoWiki стал отправной точкой для создания редактора Yandex Wiki со своим синтаксисом Wiki.
 
 <Mode :wysiwyg="false" />
 
@@ -76,35 +75,6 @@ codeSize: 1.2rem
 * Скрытый пункт списка
 * Скрытый пункт списка
 ```
-<Mode :wysiwyg="false" />
-
-<!--
-(end) ####################################
--->
-
-
----
-layout: default
-image: /part2/wiki-old.jpg
-subtitle: История
----
-
-<Mode :wysiwyg="false" />
-
-<!--
-(end) ####################################
--->
-
----
-layout: two-cols
-subtitle: История
----
-
-# Особенности первого<br />редактора
-
-* редактор с превью;
-* использовался синтаксис Wiki.
-
 <Mode :wysiwyg="false" />
 
 <!--
@@ -236,19 +206,6 @@ _1c3b6b42eee211efad66ea120268400c/orig)
 
 ---
 layout: default
-image: /part2/monkeys.png
-subtitle: История
----
-
-<Mode :wysiwyg="true" />
-
-
-<!--
-(end) ####################################
--->
-
----
-layout: default
 image: /part2/woman-in-red.png
 subtitle: История
 copyright: "фото – https://dzen.ru/a/X4l0jP8HRFpcOkcD"
@@ -260,6 +217,19 @@ copyright: "фото – https://dzen.ru/a/X4l0jP8HRFpcOkcD"
 (end) ####################################
 -->
 
+
+---
+layout: default
+image: /part2/monkeys.png
+subtitle: История
+---
+
+<Mode :wysiwyg="true" />
+
+
+<!--
+(end) ####################################
+-->
 
 ---
 layout: center

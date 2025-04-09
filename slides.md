@@ -82,7 +82,7 @@ lang: ru
 ---
 
 <div class="relative -top-[70px]">
-<h1 style="font-size: 2.85rem; line-height: 1.3;">MarkdownEditor: следующий шаг в работе с текстом</h1>
+<h1 style="font-size: 2.85rem; line-height: 1.3;">Как мы сходили на HolyJS?</h1>
 </div>
 
 ::footer::
@@ -100,35 +100,7 @@ lang: ru
     <img src="./public/part1/gravity-logo.png" class="w-[110px] self-end object-contain relative top-[2px]" />
 </div>
 
-<!--
-3. добавить футер
-4. починить зачеркивание
--->
-
 ---
-src: ./slides/part1.md
+src: ./slides/part6.md
 ---
 
----
-src: ./slides/part2.md
----
-
----
-src: ./slides/part3.md
----
-
----
-src: ./slides/part4.md
----
-
----
-src: ./slides/part5.md
----
-
-
-</file>
-</file>
-</file>
-</file>
-</file>
-</file>

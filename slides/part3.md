@@ -436,7 +436,7 @@ subtitle: Архитектура
 codeSize: 0.9rem
 ---
 
-```ts{all|8,14}
+```ts{all|8,14|all}
 type Poses = [number, number, number, number];
 export function findNotEmptyContentPosses(fragment: Fragment): Poses {
     let firstNodePos = -1;
@@ -469,7 +469,7 @@ subtitle: Архитектура
 codeSize: 0.9rem
 ---
 
-```ts{all|3,5,8}
+```ts{all|3,5,8|all}
 // манипуляции с позициями
 if (isListNode(contentNode) || isListItemNode(contentNode)) {
     const [start, end] = findNotEmptyContentPosses(contentNode.content);
@@ -499,7 +499,7 @@ subtitle: Архитектура
 codeSize: 0.9rem
 ---
 
-```ts{all|10}
+```ts{all|10|all}
 export function trimContent(
     fragment: Fragment,
     creatEmptyFragment?: () => Fragment
@@ -594,7 +594,7 @@ subtitle: Архитектура
 codeSize: 0.9rem
 ---
 
-```ts{1,3-16}
+```ts{1,3-16|all}
 // 1. schema
 import {Schema} from 'prosemirror-model';
 
@@ -625,7 +625,7 @@ subtitle: Архитектура
 codeSize: 1rem
 ---
 
-```ts{1,5-}
+```ts{1,5-|all}
 // 2. parser
 import MarkdownIt from 'markdown-it';
 import {MarkdownParser} from 'src/core/markdown/MarkdownParser';
@@ -654,7 +654,7 @@ subtitle: Архитектура
 codeSize: 1rem
 ---
 
-```ts{1,3-}
+```ts{1,3-|all}
 // 3. serializer
 import {MarkdownSerializer} from 'src/core/markdown/MarkdownSerializer';
 
@@ -680,7 +680,7 @@ subtitle: Архитектура
 codeSize: 1rem
 ---
 
-```ts{1,9-}
+```ts{1,9-|all}
 // 4. command
 import {
     chainCommands,
@@ -707,7 +707,7 @@ subtitle: Архитектура
 codeSize: 1rem
 ---
 
-```ts{1,6-}
+```ts{1,6-|all}
 // 5. state
 import {ellipsis, emDash, inputRules} from 'prosemirror-inputrules';
 import {keymap} from 'prosemirror-keymap';
@@ -737,7 +737,7 @@ subtitle: Архитектура
 codeSize: 1rem
 ---
 
-```ts{1,4-}
+```ts{1,4-|all}
 // 6. view
 import {EditorView} from 'prosemirror-view';
 
@@ -775,7 +775,7 @@ subtitle: Архитектура
 codeSize: 0.82rem
 ---
 
-```ts{all|3-8|9-12|13-16|2}
+```ts{all|3-8|9-12|13-16|2|all}
 const ParagraphExtension: Extension = (builder) => {
     builder.addNode('paragraph', () => ({
         spec: {
@@ -808,7 +808,7 @@ subtitle: Архитектура
 codeSize: 0.9rem
 ---
 
-```ts{all|9}
+```ts{all|9|all}
 const KeymapExtension: Extension = (builder) => {
     const enterCmd: Command = chainCommands(
         newlineInCode,
@@ -835,7 +835,7 @@ subtitle: Архитектура
 codeSize: 0.9rem
 ---
 
-```ts{all|2}
+```ts{all|2|all}
 const LinkExtension: Extension = (builder) => {
     builder.addMark('link', () => ({
         spec: {
@@ -864,7 +864,7 @@ subtitle: Архитектура
 codeSize: 0.9rem
 ---
 
-```ts{all|8-11|1|14}
+```ts{all|8-11|1|14|all}
 const editor = new WysiwygEditor({
     initialContent: 'Привет, мир!',
     extensions: (builder) =>
@@ -945,7 +945,7 @@ subtitle: Архитектура
 codeSize: 0.75rem
 ---
 
-```ts{all|4-9}
+```ts{all|4-9|all}
 import { createSlice } from '@reduxjs/toolkit';
 
 const counterSlice = createSlice({
@@ -1005,7 +1005,7 @@ codeSize: 1.2rem
 ---
 
 
-```md{all|1,5}
+```md{all|1,5|all}
 {% cut "Заголовок ката" %}
 
 Контент, который отобразится по нажатию.
@@ -1054,7 +1054,7 @@ codeSize: 1.2rem
 ---
 
 
-```ts{all|11}
+```ts{all|11|all}
 import type MarkdownIt from 'markdown-it';
 import type Core from 'markdown-it/lib/parser_core';
 
@@ -1140,7 +1140,7 @@ subtitle: Архитектура
 codeSize: 1.2rem
 ---
 
-```md{all|1,2|4,5|7-10}
+```md{all|1,2|4,5|7-10|all}
 # 1. Inline Directive Syntax
 :name[content]{key=val}
 
@@ -1181,7 +1181,7 @@ subtitle: Архитектура
 codeSize: 1.4rem
 ---
 
-```md{all|1,3|2}
+```md{all|1,3|2|all}
 :::cut [Заголовок ката]
 Контент, который отобразится по нажатию.
 :::

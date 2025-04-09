@@ -243,7 +243,7 @@ subtitle: Знакомство
 codeSize: 1.2rem
 ---
 
-``` {all|1|2-3}
+``` {all|1|2-3|all}
 yc resource-manager cloud create \
   --name _имя_облака_ \
   --billing-account-id _идентификатор_платежного_аккаунта_

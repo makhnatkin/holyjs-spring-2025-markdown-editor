@@ -163,7 +163,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|8-9,12}
+```ts{all|8-9,12|all}
 // src/extensions/yfm/YfmTable/YfmTableSpecs
 
 builder.addNode(YfmTableNode.Row, () => ({
@@ -230,7 +230,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|9|10|12|13}
+```ts{all|9|10|12|13|all}
 /**
  * - Assigns a unique `data-token-id` to each token.
  * - Captures and stores the raw Markdown using `MarkupManager`.
@@ -259,7 +259,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|6}
+```ts{all|6|all}
 /**
  * - Links the token to its corresponding node via `data-node-id`.
  */
@@ -279,7 +279,7 @@ subtitle: Вызовы
 codeSize: 0.9rem
 ---
 
-```ts{all|11|12}
+```ts{all|11|12|all}
 /**
  * - Retrieves the original Markdown using the `data-node-id` attribute.
  * - Uses the original Markdown if the node matches the saved version.
